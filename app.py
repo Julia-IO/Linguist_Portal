@@ -20,6 +20,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_projects")
 def get_projects():
+    # print(mongo.db)
+    print(os.environ.get("MONGO_URI"))
     projects = mongo.db.projects.find()
     return render_template("projects.html", projects=projects)
 
