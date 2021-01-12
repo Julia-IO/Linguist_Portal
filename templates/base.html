@@ -11,6 +11,7 @@
     {% endblock %}
     <title>Daily Projects Overview</title>
 </head>
+
 <body>
 
 <header>
@@ -20,12 +21,12 @@
 				<a href="#" class="brand-logo"><img src="static/img/logo_box_white.png" alt="Imagen"></a>
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
 				<ul class="right hide-on-med-and-down">
-					<li><a href="#">Home</a></li>
+					<li><a href="#">Home</a></span></li>
 					<li><a href="#">Profile</a></li>
 					<li><a href="#">New Project</a></li>
-					<li><a href="#">Manage Linguists</a></li>
+					<li><a href="{{ url_for('register') }}">Manage Linguists</a></li>
 					<li><a href="#">Projects Overview</a></li>
-					<li><a href="{{ url_for('get_projects') }}">Projects Dashboard</a></li>
+                    <li><a href="{{ url_for('get_projects') }}">Projects Dashboard</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -36,7 +37,7 @@
                 <li><a href="#">Home</a></li>
 				<li><a href="#">Profile</a></li>
 				<li><a href="#">New Project</a></li>
-				<li><a href="#">Manage Linguists</a></li>
+				<li><a href="{ url_for('register') }}">Manage Linguists</a></li>
 				<li><a href="#">Projects Overview</a></li>
 				<li><a href="{{ url_for('get_projects') }}">Projects Dashboard</a></li>
 		</ul>
