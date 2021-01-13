@@ -29,6 +29,30 @@ def get_projects():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+        # check if username already exists in db
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Username already exists")
+            return redirect(url_for("register"))
+
+        register = {
+            "full_name": request.form.get("full_name"),
+            "email_address": request.form.get("email_address"),
+            "source_languages": request.form.get("source_languages"),
+            "target_language": request.form.get("target_language"),
+            "billing_info": request.form.get("billing_info"),
+            "paypal_account": request.form.get("paypal_account"),
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(register)
+
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Registration Successful!")
     return render_template("add_linguist.html")
 
 
