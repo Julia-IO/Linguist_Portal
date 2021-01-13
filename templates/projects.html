@@ -1,26 +1,38 @@
+
 {% extends "base.html" %}
 {% block content %}
 
-    
 <div class="row">
         <div class="col s12 m8 offset-m2">
-            <h4 class="center-align teal-text">Check your projects here.</h4>
+            <h4 class="center-align teal-text">Projects Overview</h4>
         </div>
     </div>
 
-<ul class="collapsible">
+    <ul class="collapsible">
+        {% for project in projects %}
         <li>
-            <div class="collapsible-header white-text teal text-shadow"><i class="fas fa-caret-down"></i>First</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            <div class="collapsible-header white-text light-blue teal">
+                <i class="fas fa-caret-down"></i>
+                <strong>{{ project.project_name }}</strong> {{ project.due_date }}
+                {% if project.project_is_overdue == "on" %}
+                    <i class="fas fa-exclamation-circle grey-text text-lighten-2 tooltipped"
+                        data-position="right" data-tooltip="Behind! Contact your Project Lead!"></i>
+                {% endif %}
+            </div>
+            <div class="collapsible-body">
+                <strong>{{ project.category_name }}</strong>
+                <p><strong>Instructions:</strong> {{ project.project_description | safe }}</p>
+                <p><strong>Project Lead:</strong> {{ project.project_lead | safe }}</p>
+                <p></p><strong>Language Pairs:</strong> {{ project.project_languages | safe }}</p>
+                <p><strong>Specialization:</strong> {{ project.project_specialization | safe }}</p>
+                <p><strong>Software used:</strong> {{ project.project_software | safe }}</p>
+                <p><strong>Due date:</strong> {{ project.project_due_date }}</p>
+                <p><strong>Behind due date:</strong> {{ project.project_is_overdue }}</p>
+                <p><strong>Project Status:</strong> {{ project.project_status }}</p>
+
+            </div>
         </li>
-        <li>
-            <div class="collapsible-header white-text teal text-shadow"><i class="fas fa-caret-down"></i>Second</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-        <li>
-            <div class="collapsible-header white-text teal text-shadow"><i class="fas fa-caret-down"></i>Third</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
+        {% endfor %}
     </ul>
 
 {% endblock %}

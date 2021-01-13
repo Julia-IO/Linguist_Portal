@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_projects")
 def get_projects():
-    projects = mongo.db.projects.find()
+    projects = list(mongo.db.projects.find())
     return render_template("projects.html", projects=projects)
 
 
