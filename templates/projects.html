@@ -2,18 +2,25 @@
 {% block content %}
 
     
+<div class="row">
+        <div class="col s12 m8 offset-m2">
+            <h4 class="center-align teal-text">Check your projects here.</h4>
+        </div>
+    </div>
 
-    {% for project in projects %}
-        {{ project.project_name }}<br>
-        {{ project.category_name }}<br>
-        {{ project.project_lead }}<br>
-        {{ project.project_description | safe }}<br>
-        {{ project.project_languages }}<br>
-        {{ project.project_specialization }}<br>
-        {{ project.project_software }}<br>
-        {{ project.project_due_date }}<br>
-        {{ project.project_is_overdue }}<br>
-        {{ project.project_status }}
-        {% endfor %}
+<ul class="collapsible">
+        <li>
+            <div class="collapsible-header white-text teal text-shadow"><i class="fas fa-caret-down"></i>First</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        </li>
+        <li>
+            <div class="collapsible-header white-text teal text-shadow"><i class="fas fa-caret-down"></i>Second</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        </li>
+        <li>
+            <div class="collapsible-header white-text teal text-shadow"><i class="fas fa-caret-down"></i>Third</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        </li>
+    </ul>
 
 {% endblock %}
