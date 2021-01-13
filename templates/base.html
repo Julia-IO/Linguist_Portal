@@ -18,10 +18,10 @@
         <!-- top navbar -->
 		<nav class="nav-extended text-shadow grey darken-4">
 			<div class="nav-wrapper">
-				<a href="#" class="brand-logo"><img src="static/img/logo_box_white.png" alt="Imagen"></a>
-				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+				<a href="{{ url_for('login') }}" class="brand-logo"><img src="static/img/logo_box_white.png" alt="Imagen"></a>
+				<a href="{{ url_for('login') }}" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
 				<ul class="right hide-on-med-and-down">
-					<li><a href="#">Home</a></span></li>
+					<li><a href="{{ url_for('login') }}">Home</a></span></li>
 					<li><a href="#">Profile</a></li>
 					<li><a href="#">New Project</a></li>
 					<li><a href="{{ url_for('register') }}">Manage Linguists</a></li>
@@ -33,11 +33,11 @@
 
         <!-- mobile sidenav -->
 		<ul class="sidenav" id="mobile-demo">
-            <li><h4 class="center-align grey-text text-darken-4">Botsi</h4></li>
-                <li><a href="#">Home</a></li>
+            <li><h4 class="center-align grey-text text-darken-4">Tobetranslated</h4></li>
+                <li><a href="{{ url_for('login') }}">Home</a></li>
 				<li><a href="#">Profile</a></li>
 				<li><a href="#">New Project</a></li>
-				<li><a href="{ url_for('register') }}">Manage Linguists</a></li>
+				<li><a href="{{ url_for('register') }}">Manage Linguists</a></li>
 				<li><a href="#">Projects Summary</a></li>
 				<li><a href="{{ url_for('get_projects') }}">My Dashboard</a></li>
 		</ul>
@@ -49,7 +49,7 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="row flashes">
-                        <h4 class="teal white-text text-shadow center-align">{{ message }}</h4>
+                        <h5 class="teal white-text text-shadow center-align">{{ message }}</h4>
                     </div>
                 {% endfor %}
             {% endif %}
