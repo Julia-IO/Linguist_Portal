@@ -24,7 +24,7 @@
                 {% if session.user %}
                     <li><a href="{{ url_for('profile') }}">Profile</a></li>
                     <li><a href="{{ url_for('get_projects') }}">My Dashboard</a></li>
-				    <li><a href="#">New Project</a></li>
+				    <li><a href="{{ url_for('add_project') }}">New Project</a></li>
                     <li><a href="{{ url_for('register') }}">Manage Linguists</a></li>
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                 {% else %}
@@ -40,7 +40,7 @@
                 {% if session.user %}
                     <li><a href="{{ url_for('profile') }}">Profile</a></li>
                     <li><a href="{{ url_for('get_projects') }}">My Dashboard</a></li>
-				    <li><a href="#">New Project</a></li>
+				    <li><a href="{{ url_for('add_project') }}">New Project</a></li>
                     <li><a href="{{ url_for('register') }}">Manage Linguists</a></li>
                     <li><a href="{{ url_for('logout') }}">Log Out</a></span></li>
                 {% else %}
