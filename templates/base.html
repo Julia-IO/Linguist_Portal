@@ -27,8 +27,11 @@
                 {% if session.user %}
                     <li><a href="{{ url_for('profile') }}">Profile</a></li>
                     <li><a href="{{ url_for('get_projects') }}">My Dashboard</a></li>
-				    <li><a href="{{ url_for('add_project') }}">New Project</a></li>
-                    <li><a href="{{ url_for('register') }}">Manage Linguists</a></li>
+                    {%if session.user|lower == "admin"|lower%}
+				        <li><a href="{{ url_for('add_project') }}">New Project</a></li>
+                        <li><a href="{{ url_for('register') }}">New Linguist</a></li>
+                        <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+                    {% endif %}
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                 {% else %}
                     <li><a href="{{ url_for('login') }}"></a></li>
@@ -45,6 +48,7 @@
                     <li><a href="{{ url_for('get_projects') }}">My Dashboard</a></li>
 				    <li><a href="{{ url_for('add_project') }}">New Project</a></li>
                     <li><a href="{{ url_for('register') }}">Manage Linguists</a></li>
+                    <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
                     <li><a href="{{ url_for('logout') }}">Log Out</a></span></li>
                 {% else %}
                     <li><a href="{{ url_for('login') }}"></a></span></li>
