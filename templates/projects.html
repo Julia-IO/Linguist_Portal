@@ -22,14 +22,16 @@
     <ul class="collapsible">
         {% for project in projects %}
         <li>
-        {% if session.user == project.assigned_to or is_admin %} 
+        {% if session.user|lower == project.assigned_to or session.user|lower == project.created_by %}
+        
+
             <div class="collapsible-header white-text light-blue teal">
                 <div class="col s3">
                     <i class="fas fa-caret-down"></i>
-                    <a href="" class="btn-small teal accent-3">Done</a>
-                    {% if session.user|lower == project.created_by|lower or is_admin %}
+                {% if session.user|lower == project.created_by %}
+                    <a href="{{ url_for('delete_project', project_id=project._id) }}" class="btn-small teal accent-3">Done</a>
                     <a href="{{ url_for('edit_project', project_id=project._id) }}" class="btn-small orange darken-3">Edit</a>
-                    {% endif %}
+                {% endif %}   
                 </div>
                
                 <div class="col s9">
@@ -53,7 +55,8 @@
                 <p><strong>Behind due date:</strong> {{ project.project_is_overdue }}</p>
                 <p><strong>Project Status:</strong> {{ project.project_status }}</p>
             </div>
-            {% endif %}
+        {% endif %}
+           
         </li>
         {% endfor %}
     </ul>

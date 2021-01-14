@@ -45,6 +45,7 @@ def register():
             "paypal_account": request.form.get("paypal_account"),
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
+            
         }
         mongo.db.users.insert_one(register)
 
@@ -163,6 +164,12 @@ def edit_project(project_id):
     users = mongo.db.users.find().sort("username", 1) # find all project linguists
     status = mongo.db.status.find().sort("project_status", 1) # find all project status
     return render_template("edit_project.html", project=project, categories=categories, users=users, leads=leads, status=status)
+
+@app.route("/delete_project/<project_id>")
+def delete_project(project_id):
+    mongo.db.projects.remove({"_id": ObjectId(project_id)})
+    flash("Project Successfully Deleted")
+    return redirect(url_for("get_projects"))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
