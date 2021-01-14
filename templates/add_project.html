@@ -3,18 +3,81 @@
 
     <h3 class="center-align">Add New Project</h3>
 
-<div class="row">
-        <form class="col s12" method="POST" action="">
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-user-circle prefix black-text text-darken-4"></i>
-                    <input id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">First Name</label>
+    <div class="row">
+        <form class="col s12 m8 offset-m2">
+            <div class="card-panel grey lighten-4">
+                <!-- project name -->
+                <div class="row">
+					<div class="input-field col s12">
+						<i class="fas fa-pencil-alt prefix"></i>
+                        <input id="project_name" name="project_name" minlength="5" maxlength="50" 
+                            type="text" class="validate" required>
+						<label for="project_name">Project Name</label>
+					</div>
                 </div>
-                <div class="input-field col s12">
-                    <i class="fas fa-phone prefix black-text text-darken-4"></i>
-                    <input id="icon_telephone" type="tel" class="validate">
-                    <label for="icon_telephone">Telephone</label>
+                <!-- category name -->
+                <div class="row">
+					<div class="input-field col s12">
+						<i class="fas fa-project-diagram prefix"></i>
+						<input id="category_name" name="category_name" type="text" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" class="validate">
+						<label for="category_name">Type of project</label>
+					</div>
+                </div>
+                <!-- project description -->
+                <div class="row">
+					<div class="input-field col s12">
+						<i class="fas fa-tasks prefix"></i>
+						<input id="project_description" name="project_description" minlength="5" maxlength="80" 
+                            type="text" class="validate" required>
+						<label for="project_description">Add Project Instructions</label>
+					</div>
+                </div>
+                <!-- project lead -->
+                <div class="row">
+					<div class="input-field col s12">
+						<i class="fas fa-id-badge prefix"></i>
+						<input id="project_lead" name="project_lead" minlength="5" maxlength="80" 
+                            type="text" class="validate" required>
+						<label for="project_lead">Add Project Lead</label>
+					</div>
+                </div>
+                <!-- Language pairs -->
+                <div class="row">
+					<div class="input-field col s12">
+						<i class="fas fa-file-invoice prefix"></i>
+						<input id="project_languages" name="project_languages" type="text" class="validate">
+						<label for="project_languages">Add language pairs</label>
+					</div>
+                </div>
+                <!-- Specialization -->
+                <div class="row">
+					<div class="input-field col s12">
+						<i class="fas fa-certificate prefix"></i>
+						<input id="project_specialization" name="project_specialization" type="text" minlength="5" maxlength="80" class="validate">
+						<label for="project_specialization">Add project specialization</label>
+					</div>
+                </div>
+                <!-- Software -->
+                <div class="row">
+					<div class="input-field col s12">
+						<i class="fas fa-database prefix"></i>
+						<input id="project_software" name="project_software" type="text" minlength="5" maxlength="15" pattern="/^[a-zA-Z][a-zA-Z\d-_\.]+$/" class="validate" required>
+						<label for="project_software">Add Project CAT Tool or Platform. </label>
+					</div>
+                </div>
+                <!-- due date -->
+                <div class="row">
+                    <div class="input-field col s12">
+						<i class="fas fa-calendar-alt prefix"></i>
+                        <input id="project_due_date" name="project_due_date" type="text"class="datepicker validate" required>
+                        <label for="project_due_date">Add Due Date</label>
+                    </div>
+                </div>
+                <!-- register -->
+                <div class="row">
+                    <button type="submit" class="col s12 btn-large teal text-shadow">
+                        Add Linguist <i class="fas fa-sign-in-alt"></i>
+                    </button>
                 </div>
             </div>
         </form>
