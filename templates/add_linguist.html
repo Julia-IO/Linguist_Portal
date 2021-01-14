@@ -1,11 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Add Linguist</h3>
+<br>
+<div class="row">
+    <ul class="collection">
+  
+        <li class="collection-item avatar">
+            <i class="material-icons circle teal">group_add</i>
+            <span class="title"><h6>Add Linguist</h6></span>
+                <p>Fill in all fields.<br>
+                Update info on database when necessary.</p></a>
+        </li>
+    
+    </ul>
+</div>
 
-    <div class="row">
+    <div class="row card-panel grey lighten-4">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
-            <div class="card-panel grey lighten-4">
                 <!-- full name -->
                 <div class="row">
 					<div class="input-field col s12">
@@ -89,8 +100,7 @@
                         Add Linguist <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
-            </div>
         </form>
     </div>
-
+<br>
 {% endblock %}

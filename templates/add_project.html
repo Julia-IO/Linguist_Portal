@@ -1,7 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Add New Project</h3>
+<br>
+<div class="row">
+    <ul class="collection">
+  
+        <li class="collection-item avatar">
+            <i class="material-icons circle teal">add_circle_outline</i>
+            <span class="title"><h6>Add New Project</h6></span>
+                <p>Fill in all fields.<br>
+                Don't forget to follow up with linguists on progress.</p></a>
+        </li>
+    
+    </ul>
+</div>
 
     <div class="row card-panel grey lighten-4">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_project') }}">
@@ -94,6 +106,33 @@
                         <label for="project_due_date">Add Due Date</label>
                     </div>
                 </div>
+                  <!-- project status -->
+                <div class="row">
+					<div class="input-field col s12" method="POST" action="">
+						<i class="fas fa-question prefix"></i>
+						<select id="project_status" name="project_status" minlength="5" class="validate" required>
+						<option value="" disabled selected>Choose Status</option>
+					{% for status in status %}
+                            <option value="{{ status.project_status }}">{{ status.project_status }}</option>
+                    {% endfor %}
+                    </select>
+						<label for="project_status">Project Status</label>
+					</div>
+                </div>  
+                <!-- is overdue toggle -->
+                <div class="row">
+			    	<div class="input-field col s12">
+					    <div class="switch">
+                            <i class="fas fa-exclamation-circle prefix"></i>
+						        <label for="project_is_overdue">
+                                    <input type="checkbox" id="project_is_overdue" name="project_is_overdue">
+                                    <span class="lever"></span>
+                                Behind Due Date?
+                                 </label>
+					    </div>
+				    </div>
+			    </div>
+
                 <!-- submit bottom -->
                 <div class="row">
                     <button type="submit" class="col s12 btn-large teal text-shadow">
@@ -102,5 +141,6 @@
                 </div>
         </form>
     </div>
+<br>
 
 {% endblock %}

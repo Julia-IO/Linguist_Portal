@@ -10,29 +10,35 @@
         <li class="collection-item avatar">
             <i class="material-icons circle teal">insert_chart</i>
             <span class="title"><h6>Projects Overview</h6></span>
-                <p>Monitor your projects.<br>
-                Change status when delivered.</p>
+                <p>Monitor your active projects searching by username.<br>
+                Let your Project Lead know once project is delivered.</p>
         </li>
     
     </ul>
 </div>
 
-
     <ul class="collapsible">
         {% for project in projects %}
         <li>
             <div class="collapsible-header white-text light-blue teal">
-                <i class="fas fa-caret-down"></i>
-                <strong>{{ project.project_name }}</strong> {{ project.due_date }}
-                {% if project.project_is_overdue == "on" %}
+                <div class="col s3">
+                    <i class="fas fa-caret-down"></i>
+                    <a href="" class="btn-small teal accent-3">Done</a>
+                    <a href="" class="btn-small orange darken-2">Edit</a>
+                </div>
+                <div class="col s9">
+                    <strong>{{ project.project_name }}</strong>: {{ project.project_due_date }}
+                     {% if project.project_is_overdue == "on" %}
                     <i class="fas fa-exclamation-circle grey-text text-lighten-2 tooltipped"
                         data-position="right" data-tooltip="Behind! Contact your Project Lead!"></i>
-                {% endif %}
+            {% endif %}
+                </div>
             </div>
             <div class="collapsible-body">
                 <strong>{{ project.category_name }}</strong>
                 <p><strong>Instructions:</strong> {{ project.project_description | safe }}</p>
                 <p><strong>Project Lead:</strong> {{ project.project_lead | safe }}</p>
+                <p><strong>Linguist:</strong> {{ project.assigned_to | safe }}</p>
                 <p></p><strong>Language Pairs:</strong> {{ project.project_languages | safe }}</p>
                 <p><strong>Specialization:</strong> {{ project.project_specialization | safe }}</p>
                 <p><strong>Software used:</strong> {{ project.project_software | safe }}</p>

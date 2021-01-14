@@ -108,16 +108,20 @@ def logout():
 @app.route("/add_project", methods=["GET", "POST"])
 def add_project(): 
     if request.method == "POST":
+        project_is_overdue = "on" if request.form.get("project_is_overdue") else "off"
         project = {
             "project_name": request.form.get("project_name"),
             "category_name": request.form.get("category_name"),
             "project_lead": request.form.get("project_lead"),
-            "username": request.form.get("username"),
+            "assigned_to": request.form.get("username"),
             "project_description": request.form.get("project_description"),
             "project_languages": request.form.get("project_languages"),
             "project_specialization": request.form.get("project_specialization"),
             "project_software": request.form.get("project_software"),
             "project_due_date": request.form.get("project_due_date"),
+            "project_status": request.form.get("project_status"),
+            "project_is_overdue": project_is_overdue,
+
         }
         mongo.db.projects.insert_one(project)
         flash("Project Successfully Created")
@@ -126,7 +130,8 @@ def add_project():
     categories = mongo.db.categories.find().sort("category_name", 1)  # find all project categories
     leads = mongo.db.leads.find().sort("project_lead", 1) # find all project leads
     users = mongo.db.users.find().sort("username", 1) # find all project linguists
-    return render_template("add_project.html", categories=categories, users=users, leads=leads)
+    status = mongo.db.status.find().sort("project_status", 1) # find all project status
+    return render_template("add_project.html", categories=categories, users=users, leads=leads, status=status)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
