@@ -16,7 +16,7 @@
 </div>
 
     <div class="row card-panel grey lighten-4">
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_project') }}">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_project', project_id=project._id) }}">
                 <!-- project name -->
                 <div class="row">
 					<div class="input-field col s12">

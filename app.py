@@ -121,6 +121,7 @@ def add_project():
             "project_due_date": request.form.get("project_due_date"),
             "project_status": request.form.get("project_status"),
             "project_is_overdue": project_is_overdue,
+            "created_by": session["user"]
 
         }
         mongo.db.projects.insert_one(project)
@@ -135,6 +136,27 @@ def add_project():
 
 @app.route("/edit_project/<project_id>", methods=["GET", "POST"])
 def edit_project(project_id):
+    if request.method == "POST":
+        project_is_overdue = "on" if request.form.get("project_is_overdue") else "off"
+        submit = {
+            "project_name": request.form.get("project_name"),
+            "category_name": request.form.get("category_name"),
+            "project_lead": request.form.get("project_lead"),
+            "assigned_to": request.form.get("username"),
+            "project_description": request.form.get("project_description"),
+            "project_languages": request.form.get("project_languages"),
+            "project_specialization": request.form.get("project_specialization"),
+            "project_software": request.form.get("project_software"),
+            "project_due_date": request.form.get("project_due_date"),
+            "project_status": request.form.get("project_status"),
+            "project_is_overdue": project_is_overdue,
+            "created_by": session["user"]
+
+        }
+        mongo.db.projects.update({"_id": ObjectId(project_id)}, submit)
+        flash("Project Successfully Updated")
+    
+
     project = mongo.db.projects.find_one({"_id": ObjectId(project_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     leads = mongo.db.leads.find().sort("project_lead", 1) # find all project leads
