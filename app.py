@@ -119,7 +119,7 @@ def add_project():
             "project_software": request.form.get("project_software"),
             "project_due_date": request.form.get("project_due_date"),
         }
-        mongo.db.tasks.insert_one(project)
+        mongo.db.projects.insert_one(project)
         flash("Project Successfully Created")
         return redirect(url_for("get_projects"))
 

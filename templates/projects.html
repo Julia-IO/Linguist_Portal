@@ -2,11 +2,21 @@
 {% extends "base.html" %}
 {% block content %}
 
+<br>
+
 <div class="row">
-        <div class="col s12 m8 offset-m2">
-            <h3 class="center-align black-text">Projects Overview</h3>
-        </div>
-    </div>
+    <ul class="collection">
+  
+        <li class="collection-item avatar">
+            <i class="material-icons circle teal">insert_chart</i>
+            <span class="title"><h6>Projects Overview</h6></span>
+                <p>Monitor your projects.<br>
+                Change status when delivered.</p>
+        </li>
+    
+    </ul>
+</div>
+
 
     <ul class="collapsible">
         {% for project in projects %}
