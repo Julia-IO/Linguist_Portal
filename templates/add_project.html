@@ -3,9 +3,8 @@
 
     <h3 class="center-align">Add New Project</h3>
 
-    <div class="row">
-        <form class="col s12 m8 offset-m2">
-            <div class="card-panel grey lighten-4">
+    <div class="row card-panel grey lighten-4">
+        <form class="col s12 m8 offset-m2" method="POST" action={{ url_for('add_project') }}"">
                 <!-- project name -->
                 <div class="row">
 					<div class="input-field col s12">
@@ -17,7 +16,7 @@
                 </div>
                 <!-- category name -->
                 <div class="row">
-					<div class="input-field col s12" method="POST" action="">
+					<div class="input-field col s12">
 						<i class="fas fa-project-diagram prefix"></i>
 						<select id="category_name" name="category_name" class="validate" required>
                         <option value="" disabled selected>Choose Category</option>
@@ -58,12 +57,12 @@
                 <div class="row">
 					<div class="input-field col s12">
 						<i class="fas fa-tasks prefix"></i>
-						<input id="project_description" name="project_description" minlength="5" maxlength="80" 
+						<input id="project_description" name="project_description" minlength="5" maxlength="120" 
                             type="text" class="validate" required>
 						<label for="project_description">Add Project Instructions</label>
 					</div>
                 </div>
-                <!-- Language pairs -->
+                <!-- language pairs -->
                 <div class="row">
 					<div class="input-field col s12">
 						<i class="fas fa-file-invoice prefix"></i>
@@ -71,7 +70,7 @@
 						<label for="project_languages">Add language pairs</label>
 					</div>
                 </div>
-                <!-- Specialization -->
+                <!-- specialization -->
                 <div class="row">
 					<div class="input-field col s12">
 						<i class="fas fa-certificate prefix"></i>
@@ -79,7 +78,7 @@
 						<label for="project_specialization">Add project specialization</label>
 					</div>
                 </div>
-                <!-- Software -->
+                <!-- software -->
                 <div class="row">
 					<div class="input-field col s12">
 						<i class="fas fa-database prefix"></i>
@@ -95,13 +94,12 @@
                         <label for="project_due_date">Add Due Date</label>
                     </div>
                 </div>
-                <!-- register -->
+                <!-- submit bottom -->
                 <div class="row">
                     <button type="submit" class="col s12 btn-large teal text-shadow">
                         Create Project <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
-            </div>
         </form>
     </div>
 
