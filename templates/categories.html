@@ -8,12 +8,20 @@
         <li class="collection-item avatar">
             <i class="material-icons circle teal">add_circle_outline</i>
             <span class="title"><h6>Manage categories</h6></span>
-                <p>Add or delete new categories/services.<br>
+                <p>Add, edit or delete new categories/services.<br>
                 </p></a>
         </li>
     
     </ul>
 </div>
+
+    <div class="row">
+        <div class="col s12 center-align">
+            <a href="{{ url_for('add_category') }}" class="btn-large teal text-shadow">
+                Add Category <i class="fas fa-plus-square right"></i>
+            </a>
+        </div>
+    </div>
 
     <div class="row">
         {% for category in categories %}
@@ -24,7 +32,7 @@
                     </div>
                     <div class="card-action">
                         <a href="#" class="btn orange darken-3">Edit</a>
-                        <a href="#" class="btn teal accent-3">Delete</a>
+                        <a href="#" class="btn teal">Delete</a>
                     </div>
                 </div>
             </div>
