@@ -107,7 +107,10 @@ def logout():
 
 @app.route("/add_project")
 def add_project():
-    return render_template("add_project.html")
+    categories = mongo.db.categories.find().sort("category_name", 1)  # find all project categories
+    leads = mongo.db.leads.find().sort("project_lead", 1)
+    users = mongo.db.users.find().sort("username", 1)
+    return render_template("add_project.html", categories=categories, users=users, leads=leads)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

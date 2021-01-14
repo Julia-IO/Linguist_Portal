@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     {% block styles %}
     {% endblock %}
@@ -28,7 +30,7 @@
                     <li><a href="{{ url_for('register') }}">Manage Linguists</a></li>
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                 {% else %}
-                    <li><a href="{{ url_for('login') }}">Home</a></li>
+                    <li><a href="{{ url_for('login') }}"></a></li>
 				{% endif %}
 				</ul>
 			</div>
@@ -44,7 +46,7 @@
                     <li><a href="{{ url_for('register') }}">Manage Linguists</a></li>
                     <li><a href="{{ url_for('logout') }}">Log Out</a></span></li>
                 {% else %}
-                    <li><a href="{{ url_for('login') }}">Home</a></span></li>
+                    <li><a href="{{ url_for('login') }}"></a></span></li>
 				{% endif %}
 				
 		</ul>
@@ -62,11 +64,54 @@
             {% endif %}
         {% endwith %}
     </section>
-
+    
+    
     <main class="container">
         {% block content %}
         {% endblock %}
     </main>
+
+    {% if session.user %}
+    <footer class="page-footer grey darken-4">
+        <div class="container grey darken-4">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Linguist Portal</h5>
+                <p class="grey-text text-lighten-4"> Welcome to your linguist portal account.
+                    <br>Reach your Project Lead in case of doubt with a project.</p>
+              </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+            © 2021 Tobetranslated
+            </div>
+        </div>
+    </footer>
+    
+    {% else %}
+    <footer class="page-footer grey darken-4">
+        <div class="container grey darken-4">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Linguist Portal</h5>
+                <p class="grey-text text-lighten-4"> Log in to the linguist portal account to monitor your current and previous projects.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Don't have an account?</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="mailto:info@tobetranslated.com?Subject=Linguist%20Portal%20Access%20Request" class= "teal-text">Request access</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2021 Tobetranslated
+            </div>
+          </div>
+        </footer>
+    {% endif %}
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" 

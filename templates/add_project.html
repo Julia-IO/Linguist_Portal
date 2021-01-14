@@ -17,10 +17,41 @@
                 </div>
                 <!-- category name -->
                 <div class="row">
-					<div class="input-field col s12">
+					<div class="input-field col s12" method="POST" action="">
 						<i class="fas fa-project-diagram prefix"></i>
-						<input id="category_name" name="category_name" type="text" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" class="validate">
+						<select id="category_name" name="category_name" class="validate" required>
+                        <option value="" disabled selected>Choose Category</option>
+                        {% for category in categories %}
+                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        {% endfor %}
+                    </select>
 						<label for="category_name">Type of project</label>
+					</div>
+                </div>
+                <!-- project lead -->
+                <div class="row">
+					<div class="input-field col s12" method="POST" action="">
+						<i class="fas fa-id-badge prefix"></i>
+						<select id="project_lead" name="project_lead" class="validate" required>
+						<option value="" disabled selected>Choose Project Lead</option>
+					{% for lead in leads %}
+                            <option value="{{ lead.project_lead }}">{{ lead.project_lead | safe }}</option>
+                    {% endfor %}
+                    </select>
+						<label for="project_lead">Project Lead</label>
+					</div>
+                </div>
+                <!-- project linguist -->
+                <div class="row">
+					<div class="input-field col s12" method="POST" action="">
+						<i class="fas fa-language prefix"></i>
+						<select id="username" name="username" minlength="5" class="validate" required>
+						<option value="" disabled selected>Choose Linguist</option>
+					{% for user in users %}
+                            <option value="{{ user.username }}">{{ user.username }}</option>
+                    {% endfor %}
+                    </select>
+						<label for="username">Linguist</label>
 					</div>
                 </div>
                 <!-- project description -->
@@ -30,15 +61,6 @@
 						<input id="project_description" name="project_description" minlength="5" maxlength="80" 
                             type="text" class="validate" required>
 						<label for="project_description">Add Project Instructions</label>
-					</div>
-                </div>
-                <!-- project lead -->
-                <div class="row">
-					<div class="input-field col s12">
-						<i class="fas fa-id-badge prefix"></i>
-						<input id="project_lead" name="project_lead" minlength="5" maxlength="80" 
-                            type="text" class="validate" required>
-						<label for="project_lead">Add Project Lead</label>
 					</div>
                 </div>
                 <!-- Language pairs -->
@@ -69,14 +91,14 @@
                 <div class="row">
                     <div class="input-field col s12">
 						<i class="fas fa-calendar-alt prefix"></i>
-                        <input id="project_due_date" name="project_due_date" type="text"class="datepicker validate" required>
+                        <input id="project_due_date" name="project_due_date" type="text" class="datepicker validate" required >
                         <label for="project_due_date">Add Due Date</label>
                     </div>
                 </div>
                 <!-- register -->
                 <div class="row">
                     <button type="submit" class="col s12 btn-large teal text-shadow">
-                        Add Linguist <i class="fas fa-sign-in-alt"></i>
+                        Create Project <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
             </div>
