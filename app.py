@@ -137,7 +137,10 @@ def add_project():
 def edit_project(project_id):
     project = mongo.db.projects.find_one({"_id": ObjectId(project_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_project.html", project=project, categories=categories)
+    leads = mongo.db.leads.find().sort("project_lead", 1) # find all project leads
+    users = mongo.db.users.find().sort("username", 1) # find all project linguists
+    status = mongo.db.status.find().sort("project_status", 1) # find all project status
+    return render_template("edit_project.html", project=project, categories=categories, users=users, leads=leads, status=status)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
