@@ -34,7 +34,7 @@
                     {% endif %}
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                 {% else %}
-                    <li><a href="{{ url_for('login') }}"></a></li>
+                    <li><a href="{{ url_for('login') }}">Log In</a></li>
 				{% endif %}
 				</ul>
 			</div>
@@ -51,7 +51,7 @@
                     <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
                     <li><a href="{{ url_for('logout') }}">Log Out</a></span></li>
                 {% else %}
-                    <li><a href="{{ url_for('login') }}"></a></span></li>
+                    <li><a href="{{ url_for('login') }}">Log In</a></span></li>
 				{% endif %}
 				
 		</ul>
