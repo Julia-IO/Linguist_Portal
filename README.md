@@ -116,7 +116,7 @@ For my wireframes, I have used sketches on a notebook. It's how I like it the be
 ### Existing Features
 
 **Register Account**
-- Not everybody can register nd create their own unique account. As this app is intended for professional teams, only the Admin will be able to add new linguists to the team (or delete them). All passwords are hashed for security purposes!
+- Not everybody can register and create their own unique account. As this app is intended for professional teams, only the Admin will be able to add new linguists to the team (or delete them). All passwords are hashed for security purposes!
 In order to check how Linguists Account are created, you'll need to use the following username and user password:
 Username: admin
 Password: project_admin
