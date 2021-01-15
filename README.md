@@ -2,7 +2,7 @@
 
 <img src="https://github.com/Julia-IO/Linguist_Portal/blob/master/static/img/mockup.png" width="800">
 
-Need to manage complex localization projects? I've also been there! [Botsi - Linguist Portal](https://botsi-manager.herokuapp.com/login) is a place to simplify and improve processes for you and your team. This platform allows linguists and project managers established to simplify and improve processes for you and your team. This platform allows linguists and project managers to monitor their current and previous projects.
+Need to manage complex localization projects? I've also been there! Botsi - Linguist Portal is a place to simplify and improve processes for you and your team. This platform allows linguists and project managers established to simplify and improve processes for you and your team. This platform allows linguists and project managers to monitor their current and previous projects.
 
 ---
 
@@ -284,6 +284,7 @@ During development, I discovered two issues after committing to GitHub. For both
 
 - When editing a project as an admin, I wanted the previous info to populate. For some reason, the Type of Project is not always displayed.
 - The default herokuapp.com of my projects directs by default to projects.html, but I'd like to to direct to login.html. I'm sure this is the stupidest of the errors, but I couldn't solve it on time.
+- I could access my app via the link https://botsi-manager.herokuapp.com/ but I got a message from Heroku: Your account has reached its concurrent builds limit. I guess given my Free membership, I have reach the established limit.
 
 ##### back to [top](#table-of-contents)
 
