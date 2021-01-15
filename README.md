@@ -45,7 +45,7 @@ Need to manage complex localization projects? I've also been there! [Botsi - Lin
 
 This project is part of my [Code Institute](https://codeinstitute.net/) Full Stack Software Development studies, specifically the **Data Centric Development** module. The objective for this milestone project is to create a web application that allows to simplify and improve localization processes", using the **CRUD** operations of **C**reate, **R**ead, **U**pdate, and **D**elete for their projects.
 
-I have decided to build a a project based on the localization industry, since I have personally spent years working as a linguist, project manager and QA specialist and I would have like to have such a system when collaborating on localization projects.
+I have decided to build a a project based on the localization industry, since I have personally spent years working as a linguist, project manager and QA specialist and I would have liked to have such a system when collaborating on localization projects.
 
 ### User Stories
 
