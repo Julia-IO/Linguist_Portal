@@ -1,8 +1,8 @@
-# [Linguist Portal Management System](https://desserts-2bn.herokuapp.com)
+# [Linguist Portal Management System](https://botsi-manager.herokuapp.com/login)
 
-<img src="https://github.com/TravelTimN/ci-milestone04-dcd/blob/master/app/wireframes/mockups.png?raw=true" alt="2BN-Desserts" width="800">
+<img src="https://github.com/Julia-IO/Linguist_Portal/blob/master/static/img/mockup.png" width="800">
 
-Looking for something sweet? You've come to the right place! [2BN-Desserts](https://desserts-2bn.herokuapp.com) is a place to find tasty recipes that will satisfy any sweet tooth. Do you have recipes that you'd like to share as well? Great news! You can create your own free account and add an unlimited number of delicious desserts to share with the world! If you like some of the recipes that other's have submitted, you can save them to your favorites for easier access later. You can even print and share recipes directly from the site!
+Need to manage complex localization projects? I've also been there! [Botsi - Linguist Portal](https://botsi-manager.herokuapp.com/login) is a place to simplify and improve processes for you and your team. This platform allows linguists and project managers established to simplify and improve processes for you and your team. This platform allows linguists and project managers to monitor their current and previous projects.
 
 ---
 
