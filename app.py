@@ -52,7 +52,6 @@ def register():
             "paypal_account": request.form.get("paypal_account"),
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
-            
         }
         mongo.db.users.insert_one(register)
 
@@ -75,8 +74,8 @@ def login():
             # ensure hashed password matches user input
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
                         request.form.get("username")))
                     return redirect(url_for(
                         "profile", username=session["user"]))
@@ -114,7 +113,7 @@ def logout():
 
 
 @app.route("/add_project", methods=["GET", "POST"])
-def add_project(): 
+def add_project():
     if request.method == "POST":
         project_is_overdue = "on" if request.form.get("project_is_overdue") else "off"
         project = {
@@ -136,11 +135,11 @@ def add_project():
         flash("Project Successfully Created")
         return redirect(url_for("get_projects"))
 
-    categories = mongo.db.categories.find().sort("category_name", 1)  # find all project categories
-    leads = mongo.db.leads.find().sort("project_lead", 1) # find all project leads
-    users = mongo.db.users.find().sort("username", 1) # find all project linguists
-    status = mongo.db.status.find().sort("project_status", 1) # find all project status
-    return render_template("add_project.html", categories=categories, users=users, leads=leads, status=status)
+categories = mongo.db.categories.find().sort("category_name", 1)  # find all project categories
+leads = mongo.db.leads.find().sort("project_lead", 1) # find all project leads
+users = mongo.db.users.find().sort("username", 1) # find all project linguists
+status = mongo.db.status.find().sort("project_status", 1) # find all project status
+return render_template("add_project.html", categories=categories, users=users, leads=leads, status=status)
 
 @app.route("/edit_project/<project_id>", methods=["GET", "POST"])
 def edit_project(project_id):
@@ -163,14 +162,13 @@ def edit_project(project_id):
         }
         mongo.db.projects.update({"_id": ObjectId(project_id)}, submit)
         flash("Project Successfully Updated")
-    
 
-    project = mongo.db.projects.find_one({"_id": ObjectId(project_id)})
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    leads = mongo.db.leads.find().sort("project_lead", 1) # find all project leads
-    users = mongo.db.users.find().sort("username", 1) # find all project linguists
-    status = mongo.db.status.find().sort("project_status", 1) # find all project status
-    return render_template("edit_project.html", project=project, categories=categories, users=users, leads=leads, status=status)
+project = mongo.db.projects.find_one({"_id": ObjectId(project_id)})
+categories = mongo.db.categories.find().sort("category_name", 1)
+leads = mongo.db.leads.find().sort("project_lead", 1) # find all project leads
+users = mongo.db.users.find().sort("username", 1) # find all project linguists
+status = mongo.db.status.find().sort("project_status", 1) # find all project status
+return render_template("edit_project.html", project=project, categories=categories, users=users, leads=leads, status=status)
 
 @app.route("/delete_project/<project_id>")
 def delete_project(project_id):
@@ -217,4 +215,5 @@ def delete_category(category_id):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=False)
+            debug=False)			
+			
