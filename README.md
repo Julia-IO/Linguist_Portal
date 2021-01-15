@@ -2,25 +2,25 @@
 
 <img src="https://github.com/Julia-IO/Linguist_Portal/blob/master/static/img/mockup.png" width="800">
 
-Need to manage complex localization projects? I've also been there!<br> [Botsi - Linguist Portal](https://botsi-manager.herokuapp.com/) is a place to simplify and improve processes for you and your team. This platform allows linguists and project managers established to simplify and improve processes for you and your team. This platform allows linguists and project managers to monitor their current and previous projects.
+Need to manage complex localization projects? I've also been there!<br> [Botsi - Linguist Portal](https://botsi-manager.herokuapp.com/) is a place to simplify and improve processes for you and your team. This platform allows linguists and project managers to simplify and improve processes for you and your team. This platform allows linguists and project managers to monitor their current and previous projects.
+<br>
+Please, note registering and access is not free as this app is intended for closed professional teams.<br> In order to access you need to use the following details. <br>
+For login as an admin:<br>
+Username: admin<br>
+Password: project_admin<br>
 
-Please, note registering and access is not free as this app is intended for closed professional teams.<br> In order to access you need to use the following details. 
-For login as an admin:
-Username: admin
-Password: project_admin
+Once logged as an admin you can create your own Linguist Profile. Also, you can used one of the following already created Linguists' profiles:<br>
+Linguist 1:<br>
+username: jdiezes<br>
+password: eslinguist01<br>
 
-Once logged as an admin you can create your own Linguist Profile. Also, you can used one of the following already created Linguists' profiles:
-Linguist 1:
-username: jdiezes
-password: eslinguist01
-
-Linguist 2:
-username: vlenyfr
-password: frlinguist01
-
-Linguist3: 
-username: rlamsfussde
-password: delinguist01
+Linguist 2:<br>
+username: vlenyfr<br>
+password: frlinguist01<br>
+<br>
+Linguist3: <br>
+username: rlamsfussde<br>
+password: delinguist01<br>
 
 ---
 
