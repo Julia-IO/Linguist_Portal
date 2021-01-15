@@ -2,7 +2,7 @@
 
 <img src="https://github.com/Julia-IO/Linguist_Portal/blob/master/static/img/mockup.png" width="800">
 
-Need to manage complex localization projects? I've also been there! [Botsi - Linguist Portal](https://botsi-manager.herokuapp.com/login) is a place to simplify and improve processes for you and your team. This platform allows linguists and project managers established to simplify and improve processes for you and your team. This platform allows linguists and project managers to monitor their current and previous projects.
+Need to manage complex localization projects? I've also been there! Botsi - Linguist Portal is a place to simplify and improve processes for you and your team. This platform allows linguists and project managers established to simplify and improve processes for you and your team. This platform allows linguists and project managers to monitor their current and previous projects.
 
 ---
 
@@ -45,7 +45,7 @@ Need to manage complex localization projects? I've also been there! [Botsi - Lin
 
 This project is part of my [Code Institute](https://codeinstitute.net/) Full Stack Software Development studies, specifically the **Data Centric Development** module. The objective for this milestone project is to create a web application that allows to simplify and improve localization processes", using the **CRUD** operations of **C**reate, **R**ead, **U**pdate, and **D**elete for their projects.
 
-I have decided to build a a project based on the localization industry, since I have personally spent years working as a linguist, project manager and QA specialist and I would have like to have such a system when collaborating on localization projects.
+I have decided to build a a project based on the localization industry, since I have personally spent years working as a linguist, project manager and QA specialist and I would have liked to have such a system when collaborating on localization projects.
 
 ### User Stories
 
@@ -116,7 +116,7 @@ For my wireframes, I have used sketches on a notebook. It's how I like it the be
 ### Existing Features
 
 **Register Account**
-- Not everybody can register nd create their own unique account. As this app is intended for professional teams, only the Admin will be able to add new linguists to the team (or delete them). All passwords are hashed for security purposes!
+- Not everybody can register and create their own unique account. As this app is intended for professional teams, only the Admin will be able to add new linguists to the team (or delete them). All passwords are hashed for security purposes!
 In order to check how Linguists Account are created, you'll need to use the following username and user password:
 Username: admin
 Password: project_admin
@@ -284,6 +284,7 @@ During development, I discovered two issues after committing to GitHub. For both
 
 - When editing a project as an admin, I wanted the previous info to populate. For some reason, the Type of Project is not always displayed.
 - The default herokuapp.com of my projects directs by default to projects.html, but I'd like to to direct to login.html. I'm sure this is the stupidest of the errors, but I couldn't solve it on time.
+- I could access my app via the link https://botsi-manager.herokuapp.com/ but I got a message from Heroku: Your account has reached its concurrent builds limit. I guess given my Free membership, I have reach the established limit.
 
 ##### back to [top](#table-of-contents)
 
