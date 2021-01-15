@@ -73,12 +73,12 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+                    existing_user["password"], request.form.get("password")):
+                        session["user"] = request.form.get("username").lower()
+                        flash("Welcome, {}".format(
+                            request.form.get("username")))
+                        return redirect(url_for(
+                            "profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -129,17 +129,17 @@ def add_project():
             "project_status": request.form.get("project_status"),
             "project_is_overdue": project_is_overdue,
             "created_by": session["user"]
-
         }
         mongo.db.projects.insert_one(project)
         flash("Project Successfully Created")
         return redirect(url_for("get_projects"))
 
-categories = mongo.db.categories.find().sort("category_name", 1)  # find all project categories
-leads = mongo.db.leads.find().sort("project_lead", 1) # find all project leads
-users = mongo.db.users.find().sort("username", 1) # find all project linguists
-status = mongo.db.status.find().sort("project_status", 1) # find all project status
-return render_template("add_project.html", categories=categories, users=users, leads=leads, status=status)
+    categories = mongo.db.categories.find().sort("category_name", 1)  # find all project categories
+    leads = mongo.db.leads.find().sort("project_lead", 1) # find all project leads
+    users = mongo.db.users.find().sort("username", 1) # find all project linguists
+    status = mongo.db.status.find().sort("project_status", 1) # find all project status
+    return render_template("add_project.html", categories=categories, users=users, leads=leads, status=status)
+
 
 @app.route("/edit_project/<project_id>", methods=["GET", "POST"])
 def edit_project(project_id):
@@ -158,17 +158,17 @@ def edit_project(project_id):
             "project_status": request.form.get("project_status"),
             "project_is_overdue": project_is_overdue,
             "created_by": session["user"]
-
         }
         mongo.db.projects.update({"_id": ObjectId(project_id)}, submit)
         flash("Project Successfully Updated")
 
-project = mongo.db.projects.find_one({"_id": ObjectId(project_id)})
-categories = mongo.db.categories.find().sort("category_name", 1)
-leads = mongo.db.leads.find().sort("project_lead", 1) # find all project leads
-users = mongo.db.users.find().sort("username", 1) # find all project linguists
-status = mongo.db.status.find().sort("project_status", 1) # find all project status
-return render_template("edit_project.html", project=project, categories=categories, users=users, leads=leads, status=status)
+    project = mongo.db.projects.find_one({"_id": ObjectId(project_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    leads = mongo.db.leads.find().sort("project_lead", 1) # find all project leads
+    users = mongo.db.users.find().sort("username", 1) # find all project linguists
+    status = mongo.db.status.find().sort("project_status", 1) # find all project status
+    return render_template("edit_project.html", project=project, categories=categories, users=users, leads=leads, status=status)
+
 
 @app.route("/delete_project/<project_id>")
 def delete_project(project_id):
@@ -176,10 +176,12 @@ def delete_project(project_id):
     flash("Project Successfully Deleted")
     return redirect(url_for("get_projects"))
 
+
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
+
 
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
@@ -192,6 +194,7 @@ def add_category():
         return redirect(url_for("get_categories"))
 
     return render_template("add_category.html")
+
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
@@ -206,11 +209,13 @@ def edit_category(category_id):
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
 
+
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
     return redirect(url_for("get_categories"))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
