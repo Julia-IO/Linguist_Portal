@@ -1,4 +1,4 @@
-# Botsi: A Linguist Portal Management System
+# [Botsi: A Linguist Portal Management System](https://botsi-manager.herokuapp.com/)
 
 <img src="https://github.com/Julia-IO/Linguist_Portal/blob/master/static/img/mockup.png" width="800">
 
@@ -176,7 +176,8 @@ In an ideal world, there are a couple items that I would've loved to have comple
 
 - Right now there is just 1 admin, but if teams grow we can expect to have several admins. Approach as to how to grant permissions should be improved so that Project Leads can also have specific permissions.
 - I'd like linguists to be able to mark their projects as Completed. Once a project is marked as completed, I'd like automatic mails to be sent to Project Leads.
-- I'd like to include downloadable files to the Projects Overview.
+- I'd like linguists to be able to automate billing process once a project is completed. State of payments should also be displayed in their profiles.
+- I'd like to include downloadable files to the Projects Overview and downloadable invoice files to Linguist's profiles.
 
 ##### back to [top](#table-of-contents)
 
@@ -282,9 +283,8 @@ To ensure a broad range of users can successfully use this site, I tested it acr
 
 During development, I discovered two issues after committing to GitHub. For both of these bugs, I opened and *issue* on GitHub so I could come back and properly fix them.
 
-- When editing a project as an admin, I wanted the previous info to populate. For some reason, the Type of Project is not always displayed.
-- The default herokuapp.com of my projects directs by default to projects.html, but I'd like to to direct to login.html. I'm sure this is the stupidest of the errors, but I couldn't solve it on time.
-- I could access my app via the link https://botsi-manager.herokuapp.com/ but I got a message from Heroku: Your account has reached its concurrent builds limit. I guess given my Free membership, I have reach the established limit.
+- When editing a project as an admin, I wanted the previous info to get displayed. For some reason, the Type of Project is not always displayed.
+
 
 ##### back to [top](#table-of-contents)
 
@@ -412,9 +412,12 @@ Sources of the images used on this site:
 - I've followed the videos of the Mini Project and I have adapted the code provided to meet my own project requirements.
 
 ### Acknowledgements
+- Aaron Synnott
+    - My mentor. Thanks for e-meeting and give me your opinions and helpful insights.
 
 - [Tim Nelson](https://github.com/TravelTimN)
     - My most recurrent code tutor. I have also used one of your Read Me files as a template of my own.
-
+- Cormac Lawlor
+    - Code Institute Tutor: Thanks for helping me with my last-minute deployment issue with Heroku.
 
 ##### back to [top](#table-of-contents)
