@@ -299,9 +299,10 @@ To ensure a broad range of users can successfully use this site, I tested it acr
 
 ### Known Issues
 
-During development, I discovered two issues after committing to GitHub. For both of these bugs, I opened and *issue* on GitHub so I could come back and properly fix them.
+During development, I discovered two issues after committing to GitHub. 
 
 - When editing a project as an admin, I wanted the previous info to get displayed. For some reason, the Type of Project is not always displayed.
+- When adding new projects, I want to include some mailto or website links. While I can do that if I edit directly through the DB, it does not work directly from the forms.
 
 
 ##### back to [top](#table-of-contents)
