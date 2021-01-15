@@ -1,4 +1,4 @@
-# [Linguist Portal Management System](https://botsi-manager.herokuapp.com/login)
+# Botis: A Linguist Portal Management System
 
 <img src="https://github.com/Julia-IO/Linguist_Portal/blob/master/static/img/mockup.png" width="800">
 
